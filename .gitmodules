@@ -4,3 +4,6 @@
 [submodule "view/buying-guide"]
 	path = view/buying-guide
 	url = https://github.com/nitinwadhawan/buying-guide.git
+[submodule "view/store"]
+	path = view/store
+	url = https://github.com/nitinwadhawan/hkweb-store.git
