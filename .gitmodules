@@ -1,0 +1,3 @@
+[submodule "view/lp"]
+	path = view/lp
+	url = https://github.com/nitinwadhawan/hkweb-lp.git
