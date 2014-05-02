@@ -1,3 +1,6 @@
 [submodule "view/lp"]
 	path = view/lp
 	url = https://github.com/nitinwadhawan/hkweb-lp.git
+[submodule "view/buying-guide"]
+	path = view/buying-guide
+	url = https://github.com/nitinwadhawan/buying-guide.git
