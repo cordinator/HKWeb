@@ -1,0 +1,38 @@
+@import "variables.less";
+table{
+    width : 100%;
+    //.transition(width, 1s);
+    border-spacing:0px;
+}
+.table {        
+        > thead,
+        > tbody {
+            > tr {
+                > th,
+                > td {
+                        padding:@table-col-pad;
+                    }
+                }
+            }
+        > thead {
+            > tr {
+                    background-color: @table-header-bg;
+                }
+            }
+        &.table-row{
+            > tbody{
+                > tr:nth-child(even){                        
+                         background-color:@table-row-bg;
+                    }
+                }
+            }
+        &.table-hover{
+            > tbody{
+                > tr:hover{                        
+                     background-color:@table-row-hover;
+                     //.transition(background-color, 0.5s, ease-in-out);
+                    }
+                }
+            }
+        
+    }

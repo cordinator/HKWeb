@@ -1,0 +1,453 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'myriad_probold';
+    src: url('../../../Fonts/ms/1t/myriadpro-bold-webfont.eot');
+    src: url('../../../Fonts/ms/1t/myriadpro-bold-webfont.eot') format('embedded-opentype'),
+    url('../../../Fonts/ms/1t/myriadpro-bold-webfont.woff') format('woff'),
+    url('../../../Fonts/ms/1t/myriadpro-bold-webfont.ttf') format('truetype'),
+    url('myriadpro-bold-webfont.svg#myriad_probold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'oswaldbold';
+    src: url('../../../Fonts/ms/1t/oswald-bold-webfont.eot');
+    src: url('../../../Fonts/ms/1t/oswald-bold-webfont.eot') format('embedded-opentype'),
+    url('../../../Fonts/ms/1t/oswald-bold-webfont.woff') format('woff'),
+    url('../../../Fonts/ms/1t/oswald-bold-webfont.ttf') format('truetype'),
+    url('oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'myriad_web_proregular';
+    src: url('../../../Fonts/ms/1t/myriadwebpro-webfont.eot');
+    src: url('../../../Fonts/ms/1t/myriadwebpro-webfont.eot') format('embedded-opentype'),
+    url('../../../Fonts/ms/1t/myriadwebpro-webfont.woff') format('woff'),
+    url('../../../Fonts/ms/1t/myriadwebpro-webfont.ttf') format('truetype'),
+    url('myriadwebpro-webfont.svg#myriad_web_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'oswaldlight';
+    src: url('../../../Fonts/ms/1t/oswald-light-webfont.eot');
+    src: url('../../../Fonts/ms/1t/oswald-light-webfont.eot') format('embedded-opentype'),
+    url('../../../Fonts/ms/1t/oswald-light-webfont.woff') format('woff'),
+    url('../../../Fonts/ms/1t/oswald-light-webfont.ttf') format('truetype'),
+    url('oswald-light-webfont.svg#oswaldlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'oswaldbook';
+    src: url('../../../Fonts/ms/1t/oswald-regular-webfont.eot');
+    src: url('../../../Fonts/ms/1t/oswald-regular-webfont.eot') format('embedded-opentype'),
+    url('../../../Fonts/ms/1t/oswald-regular-webfont.woff') format('woff'),
+    url('../../../Fonts/ms/1t/oswald-regular-webfont.ttf') format('truetype'),
+    url('oswald-regular-webfont.svg#oswaldbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Reset CSS Start */
+
+img, a, img a, img a:hover, a:hover {border:none;}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+
+ol,ul {
+    list-style:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+
+.cl {
+    clear:both;}
+
+.flot-l {
+    float:left;}
+
+.flot-r {
+    float:right;}
+
+
+
+
+
+/* Reset CSS close */
+
+body {
+    background:url(../../../images/ms/1t/bg.jpg) repeat #FFF;
+    font-family: 'myriad_web_proregular';
+}
+
+h1.learnH {font-family: 'oswaldlight';
+    font-size:36px;
+    float:left;
+    line-height: normal;
+}
+
+h1.learnH>strong{font-family: 'oswaldbook';
+}
+
+h2.otH2 {
+    font-size:25px;
+    font-family: 'oswaldbold';
+    float:left;
+    padding-right: 10px;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    width:1100px;
+    overflow:hidden;
+    height:auto;
+    margin:0 auto;}
+
+#header {
+    width:1100px;
+    padding:30px 0 20px 0;
+    margin:0 auto;
+}
+
+
+.hk-logo {
+    float:left;
+    margin:20px 0 0 30px;}
+
+.ot-banner {
+    width:100%;
+    height:300px;
+    background:url(../../../images/ms/1t/banner.jpg) no-repeat center bottom;
+    margin:0 auto;
+}
+
+
+.learn {
+    margin:25px 0 20px 0;
+    width:1060px;
+    background:#fff;
+    border-bottom:1px solid #dadada;
+    padding:10px 20px;
+    overflow:hidden;
+}
+
+.learn img{
+    float:right;
+    margin-top:8px;}
+
+
+.cat-strip {
+    width:1100px;
+    margin: 30px 0 10px 0;}
+
+.deco-line {
+    height:30px;
+    overflow:hidden;
+    background:url(../../../images/ms/1t/divider.png) repeat-x 0px 12px;}
+
+
+
+.otAns {
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    line-height: 1.5em;
+
+}
+
+
+
+.cat-strip img{
+    float:left;
+    margin:4px 0 0 5px;}
+
+
+.otDisclmr {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.5em;
+
+}
+
+.otDisclmr a{
+    text-decoration: underline;
+}
+
+
+.ot-footer{
+    width:100%;
+    padding:20px 0;
+    background-color:#e56121;
+    font-size:13px;
+    color:#fff;
+    margin-top:20px;
+}
+
+
+.ot-footer p{
+    float:left;
+    width: 350px;
+    display:block;}
+
+.otLinkf {
+    float: right;
+    color: #fff;
+}
+
+.otLinkf a{
+    color: #fff;
+
+}
+
+.otLinkf a:hover {
+    color: #fff;
+    text-decoration: underline;
+
+}
+
+
+/* product css */
+
+.varnt-cont {
+    width: 233px !important;
+    height: auto;
+    display: inline;
+    float: left;
+    padding-left: 10px;
+    padding-right:10px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ececec;
+
+}
+
+.discountOt {
+    width: 52px;
+    height: 40px;
+    background: url("../../../images/ms/1t/off-circle.png") no-repeat;
+    display: block;
+    float: right;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'myriad_probold';
+    overflow: hidden;
+    text-align: center;
+    padding-top: 12px;
+    line-height: 0.9em;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.varnt-cont .offer-txt{
+    position: absolute;
+    display: inline-block;
+    border: 1px solid #E0E0E0;
+    background-color: #FBFF90;
+
+    margin-bottom: 5px;
+
+    padding: 4px;
+}
+/*.varnt-cont:hover{
+    box-shadow: 0px 0px 2px #ccc;
+
+}*/
+
+.product-img {
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+
+
+.varnt-cont .varnt-detail {
+    /*border-bottom: 1px solid #dadada;*/
+    color: #aaa;
+}
+
+.varnt-cont  .oos-cntnr {
+    position: absolute;
+    padding: 3px;
+    border: 1px solid #424242;
+    background-color: #FFF;
+    color: #424242;
+    margin-top: -120px;
+    z-index: 1;
+    display: block;
+    width: 80px;
+    margin-left: 60px;
+    font-size: 0.9em;
+
+}
+
+.varnt-cont  .oos-cntnr.sz180 {
+    margin-top: -100px;
+}
+
+.varnt-cont .varnt-detail .varnt-availble {
+    font-size: 0.9em;
+}
+
+.final-price {
+    color: #232323;
+    font-size: 15px;
+    padding: 5px 0;
+    font-family: 'oswaldbold';
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.varnt-cont .varnt-cmpare {
+    font-size: 0.9em;
+    cursor: pointer;
+    margin: 0;
+    float: left;
+    width: 100%;
+    font-family: 'Open Sans' SC;
+    text-transform: uppercase;
+}
+
+.varnt-cont .varnt-cmpare input[type="checkbox"] {
+    float: left;
+}
+
+.varnt-cont .vrnt-rtng {
+    color: #ccc;
+    font-size: 0.9em
+}
+
+.varnt-cont .varnt-cmpare p {
+    float: left;
+    margin: 2px 0 0 10px;
+    color: #515151;
+}
+.strikethroughOt {
+    text-decoration: line-through;
+    font-family: 'oswaldlight';
+    font-size: 15px;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+
+.otBtn {
+    width: 96px;
+    height: 31px;
+    background: url("../../../images/ms/1t/add-to-cart.png") no-repeat;
+    display: block;
+    border: 0;
+    display: inline;
+    float: right;
+}
+
+
+.varnt-titleOt {
+    font-size: 18px;
+    font-family: 'myriad_probold';
+    color: #858585;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-top:1px solid #ececec;
+    margin-top: 10px;
+
+}
+
+.varnt-titleOt:hover {
+    color: #1B75BB;
+}
+
+
+.description {
+    font-size: 14px;
+    color: #393938;
+    font-family: 'myriad_web_proregular';
+}
+
+.proOtView {
+    color: #e76c2b;
+    font-family: 'myriad_probold';
+    font-size: 15px;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top:1px solid #ececec;
+}
+
+.proOtView:hover {
+    color: #bf4301;
+}
+
+
+
+
+.ttl-cntnr {
+    margin-top: 20px;
+}
+
+.hdr-drop-cntnr, .cart-pop-container {
+    background: none;
+}
+
+
+
+.tableOt {
+    margin: 20px 0 10px 0;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.tableOt th{
+    font-family: 'myriad_probold';
+    font-size: 16px;
+    font-weight: normal;
+    padding: 10px 8px;
+    border: 1px solid #ccc;
+    color: #fff;
+}
+
+.tableOt td
+{
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    line-height: 1.5em;
+}

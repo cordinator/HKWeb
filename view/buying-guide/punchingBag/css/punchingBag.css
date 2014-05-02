@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/licensed/font?kit=cJZKeOuBrn4kERxqtaUH3eQMgGoy_nKaqo2cKJRLrBJdxlT5RfGIy95sQWGkHIXZT_wDREvo4O6_6v9ljamcpjDjNODm32iLRYw2SNTAhDi20L9efk2PUOdb5H1Th4EY) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=cJZKeOuBrn4kERxqtaUH3Rfzzo0OiUYJdfKM9TmUas1dxlT5RfGIy95sQWGkHIXZT_wDREvo4O6_6v9ljamcpjDjNODm32iLRYw2SNTAhDi20L9efk2PUOdb5H1Th4EY) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/licensed/font?kit=MTP_ySUJH_bn48VBG8sNSoQSOEeazGh8gh9HUNTvrRMFjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=MTP_ySUJH_bn48VBG8sNSjBj4j7RKzZd-IY3pDfmla0FjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/licensed/font?kit=k3k702ZOKiLJc3WVjuplzIQSOEeazGh8gh9HUNTvrRMFjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=k3k702ZOKiLJc3WVjuplzDBj4j7RKzZd-IY3pDfmla0FjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff');
+    }
+
+body { color:#5d5d5d; }
+.lp_row {
+    margin: 0 auto;
+    width: 60%;
+}
+.lp_bold { font-weight:bold; }
+.lp_itallic { font-style:italic; }
+.lp_textCenter { text-align:center; }
+	
+.lp_textRed {
+	color:#ff3400;
+}
+
+.lp_header {
+	background: url("../images/bgHeader.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 339px;
+    margin: 10px auto;
+    padding-top: 55px;
+    width: 300px;
+	padding-left:346px;
+	color:#fff;
+}
+.lp_line {
+	background-color: #FFFFFF;
+    height: 1px;
+    width: 90%;
+}
+.lp_titleNormal, .lp_subTitle {
+    font-size: 45px;
+    text-align: left;
+}
+.lp_titleNormal {
+	font-weight: lighter;
+	line-height:1em;
+}
+.lp_subTitle {
+	font-weight:bold;
+	line-height:2em;
+}
+.lp_titleBold {
+	font-size: 50px;
+    font-weight: bold;
+    line-height: 0.9em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.lp_navList {
+	font-style: italic;
+    list-style: disc inside none;
+    margin: 30px auto;
+}
+.lp_navList li {
+	font-size: 17px;
+    line-height: 1.6em;
+}
+.lp_navList li a {
+	color: #fff;
+	text-decoration:none;
+}
+.lp_navList li a:hover {
+	font-weight:bold;
+}
+
+.lp_normalText {
+	font-size:25px;
+}
+.lp_text {
+	font-size: 16px;
+    line-height: 1.8em;
+}
+.lp_smallText {
+	font-size:14px;
+	line-height:1.6em;
+}
+.lp_heading {
+	font-size: 25px;
+    line-height: 1.4em;
+    margin: 36px 0 36px;
+    text-align: center;
+    text-decoration: underline;
+}
+.lp_subHeadingImg {
+    background: url("../images/gloveIcon.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+    padding-left: 55px;
+    margin-top: 50px;
+}
+.lp_subHeading {
+	font-size: 21px;
+    font-weight: 600;
+    line-height: 1.8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.lp_textCenter {
+	text-align:center;
+}
+
+.lp_BoxText {
+	color:#5d5d5d;
+	margin-top:40px;
+}
+.lp_BoxText table {
+	margin-left: 20px;
+    width: 330px;
+}
+.lp_BoxText table td, .lp_BoxText table th {
+	border: 1px solid #CCCCCC;
+    padding: 10px;
+}
+
+.lp_redBoxHeading {
+	font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+    line-height: 1.8em;
+    text-transform: uppercase;
+}
+.lp_list { list-style:none; }
+.lp_list li {
+	background: url("../images/gloveIconSmall.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    font-size: 14px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    padding-left: 55px;
+}
+.lp_centeredText { 
+	font-size: 16px;
+    font-style: italic;
+    line-height: 1.6em;
+    margin: 36px auto;
+    text-align: center;
+    width: 90%;
+}
+
+.lp_bottomBg { margin:70px auto 50px; }
+
+.lp_basicList {
+	line-height: 2em;
+    list-style: disc outside none;
+    margin: 25px 0 25px 65px;
+}
+
+.lp_paragraphMargin {
+	margin:30px 0;
+}
+
+.lp_productsWrap {
+    margin: 0 auto;
+    width: 50%;
+}
+.lp_twoProducts {
+    margin: 0 auto;
+    width: 50% !important;
+}
+
+
+.lp_headingTopBorder {
+    border-top: 1px solid #BBBBBB;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.8em;
+    margin-top: 30px;
+    padding-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+

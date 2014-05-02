@@ -1,0 +1,52 @@
+.wrap {
+  width: 1020px;
+  min-height: 20px;
+  padding: 19px;
+  margin: 0 auto;
+  overflow: hidden;
+  clear: both;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.selected {
+  cursor: default;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.ui-icon {
+  float: right;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 12px 8px;
+  max-height: 150px;
+}
+
+table.spec-group th {
+  background-color: #BFBAB6;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+label.diff-attr-val {
+  border: 1px solid #ddd;
+  display: inline-block;
+  margin: 5px 2px;
+  padding: 5px;
+}

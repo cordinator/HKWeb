@@ -1,0 +1,158 @@
+
+
+.hldr{
+  
+}
+.offer-text {
+position: absolute;
+display: inline-block;
+border: 1px solid #E0E0E0;
+background-color: #FBFF90;
+margin-bottom: 5px;
+padding: 4px;
+z-index: 2;
+left: 0;
+top: 0;
+
+}
+
+.pd_heading{
+  width:100%;
+  padding:15px 5px;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  text-transform: uppercase; 
+}
+
+.pd_list .refine_hldr{
+  width:100%;
+  padding:10px;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  background:#f0f0f0;
+}
+
+.sort_hldr{
+  display:inline-block;
+  background:url('../img/sort.png')no-repeat center right;
+  background-size:24px;
+  padding:4px 24px 4px 0;
+}
+
+.filter_hldr{
+  display:inline-block;
+  background:url('../img/filter.png')no-repeat center right;
+  background-size:24px;
+  padding:4px 24px 4px 0;
+}
+
+/*.filter_hldr a{
+  display:block;
+}*/
+
+.pd_listing{
+  width:100%;
+  position:relative;
+}
+
+.pd_mask{
+  position:absolute;
+  top:0px;
+  width:100%;
+  height:100%;
+  z-index:10;
+  background:rgba(0,0,0,0.6);
+}
+.sort_menu{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:50%;
+  z-index:11;
+}
+
+.sort_menu div{
+  width:100%;
+  padding:12px 5px 12px 10px;
+  background:rgb(255,255,255);
+  color:#646464;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  z-index:40;
+}
+
+a.pd_hldr{
+    width: 100%;
+	padding: 10px 15px;
+	display: block;
+	position: relative;
+	border-bottom: 1px solid rgb(200, 200, 200);
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+
+
+.pd_image{
+  width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.pd_info{
+	position: relative;
+	min-height: 100px;
+	padding: 0px 0px 0px 110px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.pd_name{
+  /* overflow: hidden;
+  -ms-overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -ms-line-clamp: 2;
+  -ms-box-orient: vertical;
+  height: 34px; */
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pd_rating{
+  padding:3px 0;
+}
+.pd_old_price{
+  display:inline-block;
+  color:#969696;
+  text-decoration: line-through;
+  padding:3px 0;
+}
+
+.pd_discount{
+  padding-left:10px;
+  display:inline-block;
+  color:#009cff;
+}
+
+.pd_price{
+  padding:3px 0;
+}
+
+.out_of_stock .pd_image{
+
+}
+
+
+
+.out_of_stock .pd_image::after{
+  
+}

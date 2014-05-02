@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+  <description>
+    This tag library contains functionality specific to the healthkart app
+    and also contains generic functionality which integrates with our existing framework.
+  </description>
+  <tlib-version>1.0</tlib-version>
+  <short-name>hktl</short-name>
+  <uri>http://healthkart.com/taglibs/hkWebTagLib</uri>
+
+  <tag>
+    <description>
+      Renders the virtualHost Url for css.
+    </description>
+    <display-name>vhostCss</display-name>
+    <name>vhostCss</name>
+    <tag-class>com.hk.web.tag.VirtualHostCssTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>
+      Renders the virtualHost Url for javascript.
+    </description>
+    <display-name>vhostJs</display-name>
+    <name>vhostJs</name>
+    <tag-class>com.hk.web.tag.VirtualHostJavascriptTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>
+      Renders the virtualHost Url for images.
+    </description>
+    <display-name>vhostImage</display-name>
+    <name>vhostImage</name>
+    <tag-class>com.hk.web.tag.VirtualHostImageTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>
+        Renders the logging URL
+    </description>
+    <display-name>loggingURL</display-name>
+    <name>loggingURL</name>
+    <tag-class>com.hk.web.tag.LoggingTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <function>
+    <description>Returns url for store variant</description>
+    <display-name>getVariantUrl</display-name>
+    <name>getVariantUrl</name>
+    <function-class>com.hk.taglib.Functions</function-class>
+    <function-signature>java.lang.String
+      getVariantUrl(com.hk.api.response.variant.response.AbstractStoreVariantApiResponse))
+    </function-signature>
+    <example>${hk:getVariantUrl(variantId)}</example>
+  </function>
+
+  <function>
+    <description>Returns url for store variant</description>
+    <display-name>getVariantUrl</display-name>
+    <name>getShoppingCartVariantUrl</name>
+    <function-class>com.hk.taglib.Functions</function-class>
+    <function-signature>java.lang.String
+      getShoppingCartVariantUrl(com.hk.api.response.cart.ShoppingCartVariant))
+    </function-signature>
+    <example>${hk:getShoppingCartVariantUrl(variantId)}</example>
+  </function>
+
+  <function>
+    <description>Returns url for store variant</description>
+    <display-name>getCompareVariantUrl</display-name>
+    <name>getCompareVariantUrl</name>
+    <function-class>com.hk.taglib.Functions</function-class>
+    <function-signature>java.lang.String
+      getCompareVariantUrl(com.hk.api.response.variant.compare.variant.VariantCompareBasicInfo))
+    </function-signature>
+    <example>${hk:getShoppingCartVariantUrl(variantId)}</example>
+  </function>
+
+  <function>
+    <description>Append itracker params to the provided menu node</description>
+    <display-name>appendItrackerParamsForMenuNode</display-name>
+    <name>appendItrackerParamsForMenuNode</name>
+    <function-class>com.hk.taglib.Functions</function-class>
+    <function-signature>com.hk.api.response.menu.MenuNode appendItrackerParamsForMenuNode(com.hk.api.response.menu.MenuNode,boolean)
+    </function-signature>
+    <example>${hk:appendItrackerParamsForMenuNode(menuNode)}</example>
+  </function>
+</taglib>

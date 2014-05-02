@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+/* Reset CSS Start */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v7/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/licensed/font?kit=cJZKeOuBrn4kERxqtaUH3eQMgGoy_nKaqo2cKJRLrBJdxlT5RfGIy95sQWGkHIXZT_wDREvo4O6_6v9ljamcpjDjNODm32iLRYw2SNTAhDi20L9efk2PUOdb5H1Th4EY) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=cJZKeOuBrn4kERxqtaUH3Rfzzo0OiUYJdfKM9TmUas1dxlT5RfGIy95sQWGkHIXZT_wDREvo4O6_6v9ljamcpjDjNODm32iLRYw2SNTAhDi20L9efk2PUOdb5H1Th4EY) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/licensed/font?kit=MTP_ySUJH_bn48VBG8sNSoQSOEeazGh8gh9HUNTvrRMFjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=MTP_ySUJH_bn48VBG8sNSjBj4j7RKzZd-IY3pDfmla0FjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/licensed/font?kit=k3k702ZOKiLJc3WVjuplzIQSOEeazGh8gh9HUNTvrRMFjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff2'), url(http://themes.googleusercontent.com/licensed/font?kit=k3k702ZOKiLJc3WVjuplzDBj4j7RKzZd-IY3pDfmla0FjxAsoMPe6KTmxHr8yBfIjVpFoe6rX3ET310906cqDO5a0y2yM-buDzIWb-IT1VZnJfANE-_pKN9C1ZsKTQQU) format('woff');
+}
+
+body {
+    margin:0;
+    padding:0;}
+
+.pinkCont {
+    background:#f072ab;
+    padding-top:60px;
+    width:100%;
+    color:#fff;}
+
+
+.cl {
+    clear:both;}
+
+.topCont {
+    float:right;
+    width:600px;}
+
+hr {
+    border: 0 #ccc solid;
+    border-top-width: 5px;
+    clear: both;
+    height: 0;
+    margin: 40px 0px
+}
+
+h1 {
+    font-size:40px;
+    line-height:1.2em;
+    text-transform:uppercase;
+    font-weight: 300;
+}
+
+h2 {
+    font-size:32px;
+    font-weight: 300;
+    margin-bottom:15px;}
+
+h3 {
+    font-size:26px;
+    margin-bottom:15px;
+    font-weight: 600;}
+
+h4 {
+    background:#f072ab;
+    padding:5px 8px;
+    color:#fff;
+    text-transform:uppercase;
+    font-size:18px;
+    float:left;
+    margin:15px 0 10px 0;
+}
+
+.topCont ul{
+    list-style:none;
+    margin:20px 0;
+}
+
+.topCont ul li{
+    list-style-type:none;
+    background:url(images/circlePink.gif) no-repeat left 5px;
+    padding-left:18px;
+    margin-bottom:5px;
+}
+
+.nScroll {
+    font-size:18px;
+    float:left;
+    margin:8px 15px 0 0;}
+
+.barPoing {
+    width:650px;
+    float:left;
+}
+
+.barPoing p{
+    border:1px solid #FFFFFF;
+    padding:10px;;
+    margin-top:15px;
+    font-weight:600;
+}
+
+.necVitamin {
+    width:450px;
+    margin-top:20px;
+}
+
+.dividerVitamin{
+    border-bottom:3px solid #f072ab;
+    margin-bottom:10px;
+    font-weight:600;
+    padding-bottom:5px;
+}
+.mrgn-l-300 {
+    margin-left:300px;}

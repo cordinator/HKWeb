@@ -1,0 +1,53 @@
+
+.refine_hldr{
+  background: #ffffff;
+}
+
+.filter{
+  width:20%;
+  margin-left:5%;
+  padding:5px 0!important;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-transform: capitalize;
+  display:block;
+}
+
+
+.filter-brand .list_item1, .filter-list .list_item1{
+  background:#ffffff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding:13px 15px;
+  color:#646464;
+  clear:both;
+  display:block;
+}
+
+
+
+.filter-brand .list_item1 span:nth-of-type(1), .filter-list .list_item1 span:nth-of-type(1){
+  margin-left:5px;
+}
+
+
+.filter-brand .list_item1.empty{
+  color:#e2e2e2;
+}
+
+.filter-result .refine_hldr {
+width: 100%;
+padding: 10px 5px;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+}
+
+.filter-price{
+	background:#ffffff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding:13px 15px;
+  color:#646464;
+  clear:both;
+  display:block;
+}

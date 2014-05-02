@@ -1,0 +1,274 @@
+<project name="HK Web" basedir="." default="build">
+
+
+  <property file="build.properties"/>
+  <property file="environmentLocator.properties"/>
+
+  <!-- Specify exact path to included jar files -->
+  <path id="compile.classpath">
+    <fileset dir="${lib.root.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="${lib.dependencies.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+    <pathelement path="${classpath}"/>
+  </path>
+
+
+  <!-- Copy any resource or configuration files -->
+  <target name="copyresources">
+    <copy todir="${package.target.dir}" includeEmptyDirs="no">
+      <fileset dir="${project.src.dir}">
+        <patternset>
+          <include name="**/*.conf"/>
+          <include name="**/*.properties"/>
+          <include name="**/*.xml"/>
+          <exclude name="**/*.java"/>
+        </patternset>
+      </fileset>
+    </copy>
+
+  </target>
+
+  <target name="collect-resources">
+    <copy todir="${project.dist.dir}/WEB-INF/classes/spring">
+      <fileset dir="${project.resources.dir}/${project.env}/spring"/>
+    </copy>
+    <!--<copy todir="${project.dist.dir}/WEB-INF/classes">
+        <fileset dir="${project.resources.dir}//${project.env}/cache"/>
+    </copy>-->
+
+
+    <copy todir="${project.dist.dir}/WEB-INF/classes">
+      <fileset dir="${project.resources.dir}/${project.env}/logging"/>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/classes">
+      <fileset dir="${project.resources.dir}/${project.env}/classes"/>
+    </copy>
+    <copy file="environmentLocator.properties"
+          tofile="${project.dist.dir}/WEB-INF/classes/environmentLocator.properties"/>
+    <copy file="${project.resources.dir}/hkWebTagLib.tld" todir="${project.dist.dir}/WEB-INF/"/>
+
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.commons.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.hibernate.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.json.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.stripes.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.logger.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.freemarker.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.mysql.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.rest.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.spring.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.thirdParty.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.infinispan.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/lib">
+      <fileset dir="${lib.jest.root}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+
+    <!--<copy todir="${project.dist.dir}/WEB-INF">
+        <fileset dir="${project.resources.dir}/${project.env}/jboss"/>
+    </copy>
+  <copy todir="${project.dist.dir}/META-INF">
+        <fileset dir="${project.resources.dir}/${project.env}/META-INF"/>
+    </copy>-->
+
+  </target>
+
+
+  <target name="compile" depends="prepare,copyresources,collect-resources">
+    <javac srcdir="src" destdir="${package.target.dir}" debug="true" debuglevel="lines,vars,source" source="1.5"
+           deprecation="false" nowarn="true">
+      <classpath refid="compile.classpath"/>
+      <compilerarg value="-Xlint:-deprecation">
+      </compilerarg>
+    </javac>
+  </target>
+
+  <target name="build.env.check">
+    <condition property="build.env.prod">
+      <equals arg1="${build.env}" arg2="prod"/>
+    </condition>
+  </target>
+
+
+  <!--<target name="build" depends="compile,build.exploded" description="build production WAR">
+      <jar destfile="${project.dist.dir}/${package.jar.name}">
+          <zipfileset dir="${package.target.dir}" includes="**/**" excludes="test/**/**" />
+      </jar>
+  </target>-->
+
+  <path id="yui.classpath">
+    <pathelement location="${lib.root.dir}/yui-compressor/yuicompressor-2.4.2.jar"/>
+    <pathelement location="${lib.root.dir}/yui-compressor/yui-compressor-ant-task-0.5.jar"/>
+  </path>
+
+  <macrodef name="yui-compressor">
+    <attribute name="input" />
+    <attribute name="output"/>
+    <attribute name="description" default=""/>
+    <sequential>
+        <echo message="@{description}"/>
+        <java jar="${lib.root.dir}/yui-compressor/yuicompressor-2.4.2.jar" fork="true" >
+            <arg value="-o" />
+            <arg path="@{output}" />
+            <arg path="@{input}" />
+        </java>
+        <echo>Generated @{output}</echo>
+    </sequential>
+  </macrodef>
+
+
+  <target name="compress" depends="concat,compress-check" if="doCompress">
+    <yui-compressor description="Compress concatenated JS" input="${project.dist.js.dir}/${js.final}" output="${project.dist.js.dir}/${js.final}" />
+    <yui-compressor description="Compress concatenated CSS" input="${project.dist.css.dir}/${css.final}" output="${project.dist.css.dir}/${css.final}" />
+  </target>
+  <target name="concat" depends="less">
+      <echo message="Concatenating CSS"/>
+      <concat  destfile="${project.dist.css.dir}/${css.final}" fixlastline="true" force="true">
+          <filelist dir="${project.dist.css.dir}" description="css files to be merged in exact order">
+              <file name="bootstrap.min.css"/>
+              <file name="jquery-ui.min.css"/>
+              <file name="${less.compiled}"/>
+              <file name="default.css"/>
+          </filelist>
+      </concat>
+      <echo message="Concatenating JS"/>
+      <concat  destfile="${project.dist.js.dir}/${js.final}" fixlastline="true" force="true">
+          <filelist dir="${project.dist.js.dir}" description="js files to be merged in exact order">
+              <file name="jquery-1.9.1.min.js"/>
+              <file name="jquery-ui.min.js"/>
+              <file name="bootstrap.min.js"/>
+              <file name="handlebars.min.js"/>
+              <file name="devJs/handlebarsCommon.js"/>
+              <file name="lazyload.min.js"/>
+              <file name="devJs/common.js"/>
+          </filelist>
+      </concat>
+  </target>
+  <target name="compress-check" description="Determining whether to minimize JS, CSS based on environment">
+    <echo message="Determining whether to minimize JS, CSS"/>
+    <condition property="doCompress">
+        <not>
+            <equals arg1="${project.env}" arg2="dev"/>
+        </not>
+    </condition>
+  </target>
+
+    <target name="build" depends="compile" description="build production WAR">
+    <mkdir dir="${project.dist.dir}/WEB-INF"/>
+    <mkdir dir="${project.dist.dir}/META-INF"/>
+    <mkdir dir="${project.dist.dir}/WEB-INF/classes"/>
+    <mkdir dir="${project.dist.dir}/WEB-INF/classes/spring"/>
+    <copy todir="${project.dist.dir}">
+      <fileset dir="${project.view.dir}">
+        <include name="**/**"/>
+      </fileset>
+    </copy>
+
+    <antcall target="compress"/>
+    <!-- <copy todir="${project.dist.dir}/exploded/${package.war.name}/WEB-INF/lib">
+   </copy> -->
+
+    <copy todir="${project.dist.dir}/WEB-INF/classes">
+      <fileset dir="${package.target.dir}" excludes="test/**/**"/>
+    </copy>
+    <copy todir="${project.dist.dir}/WEB-INF/">
+      <fileset dir="${project.resources.dir}/${project.env}/WEB-INF" excludes="test/**/**"/>
+    </copy>
+    <!--<copy todir="${project.dist.dir}/WEB-INF/classes/spring">
+        <fileset dir="${project.resources.dir}/spring" excludes="test/**/**" />
+    </copy>-->
+  </target>
+
+
+  <!-- Remove classes directory for clean build -->
+  <target name="clean" description="Prepare for clean build">
+    <delete dir="${package.target.dir}"/>
+    <delete dir="${project.dist.dir}"/>
+  </target>
+
+  <!-- Check timestamp on files -->
+  <target name="prepare">
+    <mkdir dir="${project.dist.dir}"/>
+    <mkdir dir="${package.target.dir}"/>
+    <tstamp/>
+  </target>
+
+	<target name="dev-clean" depends="clean,build"/>
+
+
+
+
+    <property name="tool.less" location="${project.view.js.dir}/less-rhino-1.4.0.js"/>
+    <property name="tool.rhino" location="${lib.root.dir}/rhino-14.jar"/>
+
+    <target name="less" description="Convert LESS to CSS then concatenate and Minify any stylesheets">
+
+        <echo message="Converting LESS to CSS..."/>
+        <!-- Clear the former compiled css files -->
+        <!--<delete includeemptydirs="true">
+            <fileset dir="${css.dir}" includes="*.css, **/*.css" defaultexcludes="false"/>
+        </delete>-->
+
+        <apply dir="${project.view.less.dir}" executable="java" parallel="false" failonerror="true">
+            <!-- Give the input bundle of less files-->
+            <fileset dir="${project.view.less.dir}">
+                <include name="${less.default}"/>
+            </fileset>
+            <arg value="-jar" />
+            <arg path="${tool.rhino}" />
+            <arg path="${tool.less}" />
+            <srcfile/>
+            <!-- Output the compiled css file with corresponding name -->
+            <mapper type="glob" from="${less.default}" to="${project.dist.css.dir}/${less.compiled}"/>
+            <targetfile/>
+        </apply>
+
+    </target>
+</project>
